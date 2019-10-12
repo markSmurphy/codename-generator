@@ -12,8 +12,9 @@ try {
 
     const fs = require('fs');
     // Read list of adjectives and nouns
-    const adjectives = JSON.parse(fs.readFileSync('adjectives.json'));
-    const nouns = JSON.parse(fs.readFileSync('nouns.json'));
+    // *** TO DO --> Get absolute file paths via __dirname
+    const adjectives = JSON.parse(fs.readFileSync(__dirname + '/adjectives.json'));
+    const nouns = JSON.parse(fs.readFileSync(__dirname + '/nouns.json'));
 
     for (let i = 0; i < iterations; i++) {
         // Get random adjective
