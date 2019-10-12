@@ -1,0 +1,30 @@
+{
+  "name": "codename-generator",
+  "version": "1.0.0",
+  "description": "Utility to generate random code names",
+  "main": "codename-generator.js",
+  "scripts": {
+    "test": "node codename-generator.js 15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tbc"
+  },
+  "keywords": [
+    "codename",
+    "generator",
+    "name",
+    "code",
+    "codeword",
+    "word"
+  ],
+  "author": "Mark Murphy",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.5.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1"
+  }
+}
