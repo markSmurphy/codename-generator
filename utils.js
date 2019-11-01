@@ -45,11 +45,11 @@ module.exports = {
         const colourLevel = ['Colours Disabled', '16 Colours (Basic)', '256 Colours', '16 Million Colours (True Colour)'];
         try {
 
-            if ((level > 3 || level < 0) || (level == undefined)) {
+            if ((level > 3 || level < 0) || (level === undefined)) {
                 //The level passed isn't in our range so detect it
                 const chalk = require('chalk');
                 level = chalk.supportsColor.level;
-                if (level == undefined) {
+                if (level === undefined) {
                     level = 0;
                 }
             }
