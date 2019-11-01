@@ -6,10 +6,20 @@
   "scripts": {
     "test": "node codename-generator.js 15"
   },
+  "private": false,
+  "preferGlobal": true,
+  "bin": {
+    "codename-generator": "./codename-generator.js"
+  },
   "repository": {
     "type": "git",
-    "url": "tbc"
+    "url": "git+https://github.com/MarkSMurphy/codename-generator.git"
   },
+  "bugs": {
+    "url": "https://github.com/MarkSMurphy/codename-generator/issues"
+  },
+  "homepage": "https://github.com/MarkSMurphy/codename-generator#readme",
+
   "keywords": [
     "codename",
     "generator",
@@ -21,10 +31,11 @@
   "author": "Mark Murphy",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.5.1"
+    "eslint": "^6.6.0"
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "yargs": "^14.2.0"
   }
 }
