@@ -3,6 +3,9 @@ var argv = require('yargs')
 .help(false)
 .argv;
 
+// console colours
+const chalk = require('chalk');
+
 function randomRange(myMin, myMax) {
     return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
 }
@@ -25,6 +28,7 @@ try {
     if (Number.isInteger(Number(process.argv[2]))) {
         // Update iterations
         iterations = Number(process.argv[2]);
+        console.log(chalk.grey('Generating %d code names...'), iterations);
     }
 
     const fs = require('fs');
@@ -39,7 +43,7 @@ try {
         var noun = nouns[randomRange(0, nouns.length)];
 
         // Output code name
-        console.log('%s %s', adjective, noun);
+        console.log(chalk.bold('%s %s'), adjective, noun);
     }
 
 } catch (error) {
