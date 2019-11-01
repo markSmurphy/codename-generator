@@ -21,8 +21,9 @@ try {
         return;
     }
 
-    // Default number of codewords to generate
-    var iterations = 1;
+    // Default number of codewords to generate; The number of displayable rows in the terminal,
+    // minus some room at the end so the console prompt doesn't scroll the first code name
+    var iterations = process.stdout.rows - 3;
 
     // Check if a specific number was provided
     if (Number.isInteger(Number(process.argv[2]))) {
