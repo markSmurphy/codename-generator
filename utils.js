@@ -41,24 +41,17 @@ module.exports = {
         }
     },
 
-    getColourLevelDesc(level) {
+    getColourLevelDesc() {
         const colourLevel = ['Colours Disabled', '16 Colours (Basic)', '256 Colours', '16 Million Colours (True Colour)'];
-        try {
 
-            if ((level > 3 || level < 0) || (level === undefined)) {
-                //The level passed isn't in our range so detect it
-                const chalk = require('chalk');
-                level = chalk.supportsColor.level;
-                if (level === undefined) {
-                    level = 0;
-                }
-            }
+        // Use chalk to detect colour level support
+        const chalk = require('chalk');
+        var level = chalk.supportsColor.level;
 
-            return (colourLevel[level]);
-
-        } catch (error) {
-            debug('getColourLevelDesc() caught an exception: %O', error);
-            return('Unknown');
+        if (level === undefined) {
+            level = 0;
         }
+
+        return (colourLevel[level]);
     }
 };
