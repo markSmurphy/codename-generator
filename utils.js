@@ -48,7 +48,7 @@ module.exports = {
         const chalk = require('chalk');
         var level = chalk.supportsColor.level;
 
-        if (level === undefined) {
+        if (level === null) {
             level = 0;
         }
 
