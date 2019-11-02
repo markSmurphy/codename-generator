@@ -12,12 +12,33 @@ function randomRange(myMin, myMax) {
 
 // Main()
 try {
-    // *** TO DO --> Read command line arguments looking for --version, --help and iterations
     // Check for 'help' command line parameters
     if (argv.help) {
         // Show help screen
         const help = require('./help');
         help.helpScreen(argv.verbose);
+        return;
+    }
+
+    // Check for --list-nouns or --list-adjectives
+    if (argv.listNouns || argv.listAdjectives) {
+        const fs = require('fs');
+        var words = '';
+        if (argv.listNouns) {
+            // Read list of nouns
+            words = JSON.parse(fs.readFileSync(__dirname + '/nouns.json'));
+        } else {
+            // Read list of adjectives
+            words = JSON.parse(fs.readFileSync(__dirname + '/adjectives.json'));
+        }
+
+        // Iterate through word list
+        for (let i = 0; i < words.length; i++) {
+            let count = (i + 1).toString();
+            // Echo current word to the console
+            console.log('%s %s' ,chalk.grey(count.padEnd(4, ' ')) ,chalk.cyan(words[i]));
+        }
+        // Exit
         return;
     }
 
