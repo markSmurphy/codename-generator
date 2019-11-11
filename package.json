@@ -19,7 +19,6 @@
     "url": "https://github.com/MarkSMurphy/codename-generator/issues"
   },
   "homepage": "https://github.com/MarkSMurphy/codename-generator#readme",
-
   "keywords": [
     "codename",
     "generator",
@@ -34,7 +33,7 @@
     "eslint": "^6.6.0"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "debug": "^4.1.1",
     "yargs": "^14.2.0"
   }
