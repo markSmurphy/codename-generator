@@ -45,7 +45,7 @@ try {
         for (let i = 0; i < words.length; i++) {
             let count = (i + 1).toString();
             // Echo current word to the console
-            console.log('%s %s' ,chalk.grey(count.padEnd(4, ' ')) ,chalk.cyan(words[i]));
+            console.log('%s %s' ,chalk.dim(count.padEnd(4, ' ')) ,chalk.bold(words[i]));
         }
         // Exit
         return;
@@ -82,7 +82,7 @@ try {
         debug('Random Noun: %s', noun);
 
         // Output code name
-        console.log(chalk.bold('%s %s'), adjective, noun);
+        console.log(chalk.bold('   %s %s'), adjective, noun);
     }
 
 } catch (error) {
