@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const debug = require('debug')('codename-generator');
 debug('Entry: [%s]', __filename);
 
