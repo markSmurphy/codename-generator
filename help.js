@@ -22,7 +22,7 @@ module.exports = {
         console.log('   ' + 'node codename-generator [options]');
         console.log(endOfLine);
         console.log(chalk.grey('OPTIONS:'));
-        console.log('   ' + '                                 ' + chalk.grey('Generate a screen of code names'));
+        console.log('   ' + '                                 ' + chalk.grey('Generate a screen-full of code names'));
         console.log('   ' + '<number>                         ' + chalk.grey('Generate <number> code names'));
         console.log('   ' + '--list-adjectives                ' + chalk.grey('Lists all adjectives in the dictionary'));
         console.log('   ' + '--list-nouns                     ' + chalk.grey('Lists all nouns in the dictionary'));

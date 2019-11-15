@@ -10,9 +10,8 @@ var argv = require('yargs')
 const chalk = require('chalk');
 
 function randomRange(minimum, maximum) {
-    debug('randomRange(minimum = %s, maximum = %s)', minimum, maximum);
     var randomNumber =Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
-    debug('Randomly generated: %s', randomNumber);
+    debug('Random Number: %s (in range %s - %s)', randomNumber, minimum, maximum);
     return(randomNumber);
 }
 
@@ -72,14 +71,14 @@ try {
     const nouns = JSON.parse(fs.readFileSync(__dirname + '/nouns.json'));
 
     for (let i = 0; i < iterations; i++) {
-        debug('Iteration: %s', i + 1);
+        debug('Iteration: %s of %s', i + 1, iterations);
         // Get random adjective
         var adjective = adjectives[randomRange(0, adjectives.length)];
-        debug('Random Adjective: %s', adjective);
+        debug('Adjective: %s', adjective);
 
         // Get random noun
         var noun = nouns[randomRange(0, nouns.length)];
-        debug('Random Noun: %s', noun);
+        debug('Noun: %s', noun);
 
         // Output code name
         console.log(chalk.bold('   %s %s'), adjective, noun);

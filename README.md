@@ -5,11 +5,13 @@
 ![Downloads](https://img.shields.io/npm/dm/codename-generator.svg?style=plastic)
 ![Licence](https://img.shields.io/npm/l/codename-generator.svg?style=plastic)
 
-Have you ever needed to give something a code name, perhaps a project you're working on, but your imagination has let you down?
-Use `codename-generator` to suggest random code names.
+## Overview
+
+Have you ever needed to give something a code name?  Perhaps for a project you're working on, or a new screen-name, but your imagination has let you down?
+Use `codename-generator` to suggest some random code names.
 
 It has a small dictionary of a few thousand inoffensive adjectives and nouns which are picked at random to generate a suggested code name.
-By default a screen full of suggestions (based upon the property `node -p process.stdout.rows`).
+By default a screen-full of suggestions are made, so the larger your screen is, the more suggestions you'll have.
 
 ```text
 codename-generator
@@ -17,18 +19,52 @@ codename-generator
 
 ![`codename-generator`](https://marksmurphy.github.io/img/codename-generator-screenfull.gif)
 
-Or you can specify how many you'd like generated.
+---
+
+## Installation
 
 ```text
-codename-generator 15
+npm -g install codename-generator
 ```
 
-![`codename-generator 15`](https://marksmurphy.github.io/img/codename-generator-15.gif)
+---
 
-Full usage details are available via the help screen.
+## Options
+
+You can use the `--help` option to list all of the options.
+
+### Default (no options)
+
+Don't supply any options and by default you'll get a screen-full of suggested code names (based upon the terminal's row count via the property `node -p process.stdout.rows`).
+
+### <number>
+
+Or you can specify how many you'd like generated:
 
 ```text
-codename-generator --help
+codename-generator 20
 ```
 
-![`codename-generator --help`](https://marksmurphy.github.io/img/codename-generator-help.gif)
+![`codename-generator 20`](https://marksmurphy.github.io/img/codename-generator-20.gif)
+
+### --list-adjectives
+
+Lists all ~1870 adjectives in the dictionary.
+
+### --list-nouns
+
+Lists all ~960 nouns in the dictionary.
+
+### --no-color
+
+Switches off colour output.  Useful if piping output somewhere which doesn't handle the unicode control codes.
+
+### --version
+
+Display the version number.
+
+### --help
+
+Display the help screen.
+
+![`codename-generator --help`](https://marksmurphy.github.io/img/codename-generator-help.png)
