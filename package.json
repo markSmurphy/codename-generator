@@ -1,6 +1,6 @@
 {
   "name": "codename-generator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Utility to generate random code names",
   "main": "codename-generator.js",
   "scripts": {
@@ -25,15 +25,14 @@
     "name",
     "code",
     "codeword",
-    "word"
+    "word",
+    "screen name"
   ],
   "author": "Mark Murphy",
   "license": "MIT",
-  "devDependencies": {
-    "eslint": "^6.8.0"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "debug": "^4.1.1",
     "yargs": "^15.3.1"
   }
