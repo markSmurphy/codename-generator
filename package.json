@@ -33,7 +33,7 @@
   "devDependencies": {},
   "dependencies": {
     "chalk": "^4.0.0",
-    "debug": "^4.1.1",
+    "debug": "^4.2.0",
     "yargs": "^15.3.1"
   }
 }
