@@ -1,6 +1,6 @@
 {
   "name": "codename-generator",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Utility to generate random code names",
   "main": "codename-generator.js",
   "scripts": {
@@ -32,7 +32,7 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "chalk": "^4.0.0",
+    "chalk": "^4.1.0",
     "debug": "^4.1.1",
     "yargs": "^15.3.1"
   }
