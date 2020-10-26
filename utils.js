@@ -16,7 +16,7 @@ module.exports = {
             return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
         } catch (error) {
             debug('formatBytes() caught an exception: %O', error);
-            return('%d Bytes', bytes);
+            return(bytes + ' Bytes');
         }
 
     },
@@ -34,7 +34,7 @@ module.exports = {
             } catch (error) {
                 debug('secondsToHms() caught an exception: %O', error);
                 // an unexpected error occurred; return the original value
-                return('%d seconds', seconds);
+                return(seconds + ' seconds' );
             }
         } else {
             return('<invalid>');
