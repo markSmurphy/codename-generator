@@ -11,6 +11,10 @@ var argv = require('yargs')
 // console colours
 const chalk = require('chalk');
 
+// Error formatting
+const PrettyError = require('pretty-error');
+const pe = new PrettyError();
+
 function randomRange(minimum, maximum) {
     var randomNumber =Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
     debug('Random Number: %s (in range %s - %s)', randomNumber, minimum, maximum);
@@ -87,5 +91,5 @@ try {
     }
 
 } catch (error) {
-    console.error('An error occurred: %O', error);
+    console.error(pe.render(error));
 }
