@@ -1,6 +1,6 @@
 {
   "name": "codename-generator",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Utility to generate random code names",
   "main": "codename-generator.js",
   "scripts": {
