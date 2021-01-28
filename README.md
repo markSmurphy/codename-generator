@@ -1,7 +1,7 @@
 # codename-generator
 
 ![Version](https://img.shields.io/npm/v/codename-generator.svg?style=plastic)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/codename-generator?label=Size&style=plastic)
+![node-current](https://img.shields.io/node/v/codename-generator?style=plastic)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/acf4ae9001a0486497a4b12c4ccbbd44)](https://www.codacy.com?utm_source=bitbucket.org&amp;utm_medium=referral&amp;utm_content=MarkSMurphy/codename-generator&amp;utm_campaign=Badge_Grade)
 ![GitHub issues](https://img.shields.io/github/issues/markSmurphy/codename-generator?style=plastic)
 [![Known Vulnerabilities](https://snyk.io/test/github/markSmurphy/codename-generator/badge.svg?targetFile=package.json)](https://snyk.io/test/github/markSmurphy/codename-generator?targetFile=package.json)
