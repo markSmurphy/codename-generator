@@ -33,6 +33,12 @@ npm -g install codename-generator
 
 ---
 
+## Change Log
+
+See what's changed recently via the `CHANGELOG.md` which can be found [here](./CHANGELOG.md)
+
+---
+
 ## Options
 
 You can use the `--help` option to list all of the options.

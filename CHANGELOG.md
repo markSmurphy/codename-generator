@@ -6,6 +6,7 @@
 
 * Added `CHANGELOG.md`.
 * Added *Required Node Version* ![node-current](https://img.shields.io/node/v/codename-generator?style=social) badge to `README.md`.
+* Added link to `CHANGELOG.md` to `README.md`.
 
 ### Changed
 
