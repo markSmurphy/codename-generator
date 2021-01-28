@@ -9,6 +9,8 @@
 
 ### Changed
 
+* Updated dependency `pretty-error` to version `3.0.3`.
+* Updated dependency `supports-color` to version `8.1.1`.
 * Removed broken *Size* badge from `README.md`.
 
 ---
