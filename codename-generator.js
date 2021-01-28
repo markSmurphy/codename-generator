@@ -16,10 +16,15 @@ const PrettyError = require('pretty-error');
 const pe = new PrettyError();
 
 function randomRange(minimum, maximum) {
-    var randomNumber =Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
-    debug('Random Number: %s (in range %s - %s)', randomNumber, minimum, maximum);
-    return(randomNumber);
+    try {
+        var randomNumber =Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
+        debug('Random Number: %s (in range %s - %s)', randomNumber, minimum, maximum);
+        return(randomNumber);
+    } catch (error) {
+        console.error(pe.render(error));
+    }
 }
+
 
 // Main()
 try {
@@ -50,16 +55,17 @@ try {
         for (let i = 0; i < words.length; i++) {
             let count = (i + 1).toString();
             // Echo current word to the console
-            console.log('%s %s' ,chalk.dim(count.padEnd(4, ' ')) ,chalk.bold(words[i]));
+            console.log('%s %s', chalk.dim(count.padEnd(4, ' ')), chalk.bold(words[i]));
         }
         // Exit
         return;
     }
 
-    // Default number of codewords to generate; The number of displayable rows in the terminal,
+    // Default number of codewords to generate; The number of displayable rows in the console,
     // minus some room at the end so the console prompt doesn't scroll the first code name
-    var iterations = process.stdout.rows - 3;
-    debug('Setting default iterations to (%s - 3) = %s', process.stdout.rows, iterations);
+    const consoleRows = process.stdout.rows;
+    var iterations = consoleRows - 3;
+    debug('Setting default iterations to (%s - 3) = %s', consoleRows, iterations);
 
     // Check if a specific number was provided
     if (Number.isInteger(Number(process.argv[2]))) {
@@ -79,17 +85,26 @@ try {
     for (let i = 0; i < iterations; i++) {
         debug('Iteration: %s of %s', i + 1, iterations);
         // Get random adjective
-        var adjective = adjectives[randomRange(0, adjectives.length)];
+        let randomAdjective = randomRange(0, adjectives.length - 1);
+        var adjective = adjectives[randomAdjective];
         debug('Adjective: %s', adjective);
 
         // Get random noun
-        var noun = nouns[randomRange(0, nouns.length)];
+        let randomNoun = randomRange(0, nouns.length - 1);
+        var noun = nouns[randomNoun];
         debug('Noun: %s', noun);
 
+        if (adjective === undefined) {
+            debug('undefined adjective: %s of %s', randomAdjective, adjectives.length);
+        }
+
+        if (noun === undefined) {
+            console.log('undefined noun: %s of %s', randomNoun, nouns.length);
+        }
         // Output code name
         console.log(chalk.bold('   %s %s'), adjective, noun);
     }
 
 } catch (error) {
-    console.error(pe.render(error));
+    console.log(pe.render(error));
 }
