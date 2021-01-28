@@ -15,16 +15,42 @@ const chalk = require('chalk');
 const PrettyError = require('pretty-error');
 const pe = new PrettyError();
 
+// Define running modes
+const runningMode = {
+    normal: 0,
+    nsw: 1
+};
+
+// set default running mode
+var mode = runningMode.normal;
+
 function randomRange(minimum, maximum) {
     try {
-        var randomNumber =Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
+        var randomNumber = Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
         debug('Random Number: %s (in range %s - %s)', randomNumber, minimum, maximum);
         return(randomNumber);
     } catch (error) {
         console.error(pe.render(error));
+        return(0);
     }
 }
 
+function getRandomWord(wordList) {
+    try {
+        let randomWordIndex = randomRange(0, wordList.length - 1);
+        let randomWord = wordList[randomWordIndex];
+        return(randomWord);
+
+    } catch (error) {
+        console.error(pe.render(error));
+        return('null');
+    }
+
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
 
 // Main()
 try {
@@ -61,6 +87,11 @@ try {
         return;
     }
 
+    // Check for NSW flag
+    if (argv.nsw) {
+        // Switch running mode to NSW
+        mode = runningMode.nsw;
+    }
     // Default number of codewords to generate; The number of displayable rows in the console,
     // minus some room at the end so the console prompt doesn't scroll the first code name
     const consoleRows = process.stdout.rows;
@@ -81,26 +112,45 @@ try {
     const adjectives = JSON.parse(fs.readFileSync(__dirname + '/adjectives.json'));
     debug('Reading file: %s', __dirname + '/nouns.json');
     const nouns = JSON.parse(fs.readFileSync(__dirname + '/nouns.json'));
+    var adjectivesNSW = {};
+    var nounsNSW = {};
+    if (mode === runningMode.nsw) {
+        // Also read in nsw files
+        try {
+            debug('NSW: Not Safe for Work mode enabled.');
+            debug('Reading file: %s', __dirname + '/adjectives.nsw.json');
+            adjectivesNSW = JSON.parse(fs.readFileSync(__dirname + '/adjectives.nsw.json'));
+            debug('Reading file: %s', __dirname + '/nouns.nsw.json');
+            nounsNSW = JSON.parse(fs.readFileSync(__dirname + '/nouns.nsw.json'));
+        } catch (error) {
+            debug('An error occurred trying to load nsw content: %O', error);
+            // Switch running mode back to normal as nsw content didn't load
+            mode = runningMode.normal;
+        }
+    }
 
     for (let i = 0; i < iterations; i++) {
+        let adjective= '';
+        let noun = '';
         debug('Iteration: %s of %s', i + 1, iterations);
         // Get random adjective
-        let randomAdjective = randomRange(0, adjectives.length - 1);
-        var adjective = adjectives[randomAdjective];
+        if ((mode === runningMode.nsw) && (getRandomInt(2) === 1)) {
+            // NSW mode is enabled and a 50/50 chance of using a profanity came up true
+            adjective = getRandomWord(adjectivesNSW);
+        } else {
+            adjective = getRandomWord(adjectives);
+        }
         debug('Adjective: %s', adjective);
 
         // Get random noun
-        let randomNoun = randomRange(0, nouns.length - 1);
-        var noun = nouns[randomNoun];
+        if ((mode === runningMode.nsw) && (getRandomInt(2) === 1)) {
+            // NSW mode is enabled and a 50/50 chance of using a profanity came up true
+            noun = getRandomWord(nounsNSW);
+        } else {
+            noun = getRandomWord(nouns);
+        }
         debug('Noun: %s', noun);
 
-        if (adjective === undefined) {
-            debug('undefined adjective: %s of %s', randomAdjective, adjectives.length);
-        }
-
-        if (noun === undefined) {
-            console.log('undefined noun: %s of %s', randomNoun, nouns.length);
-        }
         // Output code name
         console.log(chalk.bold('   %s %s'), adjective, noun);
     }
