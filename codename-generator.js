@@ -21,17 +21,24 @@ const runningMode = {
     nsw: 1
 };
 
+var nswSelection = null;
+const nswSelectionChoices = {
+    adjective: 0,
+    noun: 1,
+    both: 2
+};
+
 // set default running mode
 var mode = runningMode.normal;
 
 function randomRange(minimum, maximum) {
     try {
         var randomNumber = Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
-        debug('Random Number: %s (in range %s - %s)', randomNumber, minimum, maximum);
+        // debug('Random Number: %s (in range %s - %s)', randomNumber, minimum, maximum);
         return(randomNumber);
     } catch (error) {
         console.error(pe.render(error));
-        return(0);
+        return(minimum);
     }
 }
 
@@ -133,8 +140,14 @@ try {
         let adjective= '';
         let noun = '';
         debug('Iteration: %s of %s', i + 1, iterations);
+
+        if (runningMode.nsw) {
+            // We're running in NSW mode, so choose whether to generate a rude adjective or noun in this iteration
+            nswSelection = getRandomInt(2);
+        }
+
         // Get random adjective
-        if ((mode === runningMode.nsw) && (getRandomInt(2) === 1)) {
+        if ((mode === runningMode.nsw) && (nswSelection === nswSelectionChoices.adjective)) {
             // NSW mode is enabled and a 50/50 chance of using a profanity came up true
             adjective = getRandomWord(adjectivesNSW);
         } else {
@@ -143,7 +156,7 @@ try {
         debug('Adjective: %s', adjective);
 
         // Get random noun
-        if ((mode === runningMode.nsw) && (getRandomInt(2) === 1)) {
+        if ((mode === runningMode.nsw) && (nswSelection === nswSelectionChoices.noun)) {
             // NSW mode is enabled and a 50/50 chance of using a profanity came up true
             noun = getRandomWord(nounsNSW);
         } else {

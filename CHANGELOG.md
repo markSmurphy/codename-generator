@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0] - *Unreleased*
+
+### Added
+
+* Added `--nsw` mode which generates **Not Safe for Work** code names.
+
+---
+
 ## [1.0.15] - January 28<sup>th</sup> 2021
 
 ### Added

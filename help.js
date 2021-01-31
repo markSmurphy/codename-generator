@@ -26,7 +26,7 @@ module.exports = {
         console.log('   ' + '<number>                         ' + chalk.grey('Generate <number> code names'));
         console.log('   ' + '--list-adjectives                ' + chalk.grey('Lists all adjectives in the dictionary'));
         console.log('   ' + '--list-nouns                     ' + chalk.grey('Lists all nouns in the dictionary'));
-        console.log('   ' + '--nsw                            ' + chalk.grey('"Not Safe for Work" which outputs profanities'));
+        console.log('   ' + '--nsw                            ' + chalk.grey('"Not Safe for Work" mode outputs profanities'));
         console.log('   ' + '--no-color                       ' + chalk.grey('Switches off colour output'));
         console.log('   ' + '--version                        ' + chalk.grey('Display version number'));
         console.log('   ' + '--help                           ' + chalk.grey('Display this help'));
