@@ -6,6 +6,10 @@
 
 * Added `--nsw` mode which generates **Not Safe for Work** code names.
 
+### Changed
+
+* Updated dependency `chalk` to version `4.1.1`.
+
 ---
 
 ## [1.0.15] - January 28<sup>th</sup> 2021
