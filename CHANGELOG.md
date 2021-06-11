@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1] - June 11<sup>th</sup> 2021
+
+### Security
+
+* Updated `css-what` package deep in the dependency tree to mitigate [CVE-2021-33587](https://www.npmjs.com/advisories/1754).
+
+---
+
 ## [1.1.0] - May 11<sup>th</sup> 2021
 
 ### Added
