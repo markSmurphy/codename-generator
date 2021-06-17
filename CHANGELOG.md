@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.2] - June 17<sup>th</sup> 2021
+
+### Changed
+
+* Updated `pretty-error` to version `3.0.4`.
+
+---
+
 ## [1.1.1] - June 11<sup>th</sup> 2021
 
 ### Security
