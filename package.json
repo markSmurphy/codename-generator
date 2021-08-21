@@ -35,7 +35,7 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.2",
     "debug": "^4.3.1",
     "pretty-error": "^3.0.4",
     "supports-color": "^8.1.1",
