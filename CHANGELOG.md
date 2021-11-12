@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.3] - November 12<sup>th</sup> 2021
+
+### Changed
+
+* Updated `chalk` to version `4.1.2`.
+* Updated `debug` to version `4.3.2`.
+
+---
+
 ## [1.1.2] - June 17<sup>th</sup> 2021
 
 ### Changed
