@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.4] - February 20<sup>th</sup> 2022
+
+### Changed
+
+* Updated `debug` to version `4.3.3`.
+
+---
+
 ## [1.1.3] - November 12<sup>th</sup> 2021
 
 ### Changed
