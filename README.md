@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/npm/v/codename-generator.svg?style=plastic)
 ![node-current](https://img.shields.io/node/v/codename-generator?style=plastic)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/acf4ae9001a0486497a4b12c4ccbbd44)](https://www.codacy.com?utm_source=bitbucket.org&amp;utm_medium=referral&amp;utm_content=MarkSMurphy/codename-generator&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5f8ab4e09fde4454968b383a2b4f2fbe)](https://www.codacy.com/gh/markSmurphy/codename-generator/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=markSmurphy/codename-generator&amp;utm_campaign=Badge_Grade)
 ![GitHub issues](https://img.shields.io/github/issues/markSmurphy/codename-generator?style=plastic)
 [![Known Vulnerabilities](https://snyk.io/test/github/markSmurphy/codename-generator/badge.svg?targetFile=package.json)](https://snyk.io/test/github/markSmurphy/codename-generator?targetFile=package.json)
 ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/codename-generator.svg?style=plastic)
