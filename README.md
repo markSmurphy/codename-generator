@@ -65,7 +65,7 @@ Lists all ~1870 adjectives in the dictionary.
 
 Lists all ~960 nouns in the dictionary.
 
-### --nsw
+### --nsfw
 
 Enables **Not Safe for Work** mode, which supplements the usual inoffensive dictionary with a selection of the ruder everyday english expressions.
 

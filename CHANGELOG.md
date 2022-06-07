@@ -1,4 +1,13 @@
-# Changelog
+# Change Log
+
+## [1.2.0] - June 7<sup>th</sup> 2022
+
+### Changed
+
+* Changed all `nsf` references to `nsfw` as it should have been and it annoyed me a little. The old `--nsw` switch still works, as does `--nsfw`.
+* Updated `debug` to version `4.3.4`.
+
+---
 
 ## [1.1.4] - February 20<sup>th</sup> 2022
 

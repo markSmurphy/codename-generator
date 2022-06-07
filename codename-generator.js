@@ -18,11 +18,11 @@ const pe = new PrettyError();
 // Define running modes
 const runningMode = {
     normal: 0,
-    nsw: 1
+    nsfw: 1
 };
 
-var nswSelection = null;
-const nswSelectionChoices = {
+var nsfwSelection = null;
+const nsfwSelectionChoices = {
     adjective: 0,
     noun: 1,
     both: 2
@@ -94,10 +94,10 @@ try {
         process.exit();
     }
 
-    // Check for NSW flag
-    if (argv.nsw) {
-        // Switch running mode to NSW
-        mode = runningMode.nsw;
+    // Check for NSFW flag
+    if ((argv.nsw) || (argv.nsfw)) {
+        // Switch running mode to NSFW
+        mode = runningMode.nsfw;
     }
     // Default number of codewords to generate; The number of displayable rows in the console,
     // minus some room at the end so the console prompt doesn't scroll the first code name
@@ -119,19 +119,19 @@ try {
     const adjectives = JSON.parse(fs.readFileSync(__dirname + '/adjectives.json'));
     debug('Reading file: %s', __dirname + '/nouns.json');
     const nouns = JSON.parse(fs.readFileSync(__dirname + '/nouns.json'));
-    var adjectivesNSW = {};
-    var nounsNSW = {};
-    if (mode === runningMode.nsw) {
-        // Also read in nsw files
+    var adjectivesNSFW = {};
+    var nounsNSFW = {};
+    if (mode === runningMode.nsfw) {
+        // Also read in nsfw files
         try {
-            debug('NSW: Not Safe for Work mode enabled.');
-            debug('Reading file: %s', __dirname + '/adjectives.nsw.json');
-            adjectivesNSW = JSON.parse(fs.readFileSync(__dirname + '/adjectives.nsw.json'));
-            debug('Reading file: %s', __dirname + '/nouns.nsw.json');
-            nounsNSW = JSON.parse(fs.readFileSync(__dirname + '/nouns.nsw.json'));
+            debug('NSFW: Not Safe for Work mode enabled.');
+            debug('Reading file: %s', __dirname + '/adjectives.nsfw.json');
+            adjectivesNSFW = JSON.parse(fs.readFileSync(__dirname + '/adjectives.nsfw.json'));
+            debug('Reading file: %s', __dirname + '/nouns.nsfw.json');
+            nounsNSFW = JSON.parse(fs.readFileSync(__dirname + '/nouns.nsfw.json'));
         } catch (error) {
-            debug('An error occurred trying to load nsw content: %O', error);
-            // Switch running mode back to normal as nsw content didn't load
+            debug('An error occurred trying to load nsfw content: %O', error);
+            // Switch running mode back to normal as nsfw content didn't load
             mode = runningMode.normal;
         }
     }
@@ -141,24 +141,24 @@ try {
         let noun = '';
         debug('Iteration: %s of %s', i + 1, iterations);
 
-        if (runningMode.nsw) {
-            // We're running in NSW mode, so choose whether to generate a rude adjective or noun in this iteration
-            nswSelection = getRandomInt(2);
+        if (runningMode.nsfw) {
+            // We're running in NSFW mode, so choose whether to generate a rude adjective or noun in this iteration
+            nsfwSelection = getRandomInt(2);
         }
 
         // Get random adjective
-        if ((mode === runningMode.nsw) && (nswSelection === nswSelectionChoices.adjective)) {
-            // NSW mode is enabled and a 50/50 chance of using a profanity came up true
-            adjective = getRandomWord(adjectivesNSW);
+        if ((mode === runningMode.nsfw) && (nsfwSelection === nsfwSelectionChoices.adjective)) {
+            // NSFW mode is enabled and a 50/50 chance of using a profanity came up true
+            adjective = getRandomWord(adjectivesNSFW);
         } else {
             adjective = getRandomWord(adjectives);
         }
         debug('Adjective: %s', adjective);
 
         // Get random noun
-        if ((mode === runningMode.nsw) && (nswSelection === nswSelectionChoices.noun)) {
-            // NSW mode is enabled and a 50/50 chance of using a profanity came up true
-            noun = getRandomWord(nounsNSW);
+        if ((mode === runningMode.nsfw) && (nsfwSelection === nsfwSelectionChoices.noun)) {
+            // NSFW mode is enabled and a 50/50 chance of using a profanity came up true
+            noun = getRandomWord(nounsNSFW);
         } else {
             noun = getRandomWord(nouns);
         }
