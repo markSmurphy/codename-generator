@@ -67,7 +67,7 @@ try {
         // Show help screen
         const help = require('./help');
         help.helpScreen(argv.verbose);
-        return;
+        process.exit();
     }
 
     // Check for --list-nouns or --list-adjectives
@@ -91,7 +91,7 @@ try {
             console.log('%s %s', chalk.dim(count.padEnd(4, ' ')), chalk.bold(words[i]));
         }
         // Exit
-        return;
+        process.exit();
     }
 
     // Check for NSW flag
