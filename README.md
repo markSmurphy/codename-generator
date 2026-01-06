@@ -17,17 +17,17 @@ Use `codename-generator` to suggest some random code names.
 It has a small dictionary of a few thousand inoffensive adjectives and nouns which are picked at random to generate a suggested code name.
 By default a screen-full of suggestions are made, so the larger your screen is, the more suggestions you'll have.
 
-```text
+```shell
 codename-generator
 ```
 
-![`codename-generator`](https://marksmurphy.github.io/img/codename-generator-screenfull.gif)
+![`codename-generator`](screenshots/codename-generator-screenfull.gif)
 
 ---
 
 ## Installation
 
-```text
+```shell
 npm -g install codename-generator
 ```
 
@@ -35,7 +35,7 @@ npm -g install codename-generator
 
 ## Change Log
 
-See what's changed recently via the `CHANGELOG.md` which can be found [here](./CHANGELOG.md)
+All changes are logged in the [CHANGELOG.md](./CHANGELOG.md) file.
 
 ---
 
@@ -51,11 +51,11 @@ Don't supply any options and by default you'll get a screen-full of suggested co
 
 Or you can specify how many you'd like generated:
 
-```text
+```shell
 codename-generator 20
 ```
 
-![`codename-generator 20`](https://marksmurphy.github.io/img/codename-generator-20.gif)
+![`codename-generator 20`](screenshots/codename-generator-20.gif)
 
 ### --list-adjectives
 
@@ -81,4 +81,4 @@ Display the version number.
 
 Display the help screen.
 
-![`codename-generator --help`](https://marksmurphy.github.io/img/codename-generator-help.png)
+![`codename-generator --help`](screenshots/codename-generator-help.png)
