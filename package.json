@@ -2,6 +2,7 @@
   "name": "codename-generator",
   "version": "1.2.1",
   "description": "Utility to generate random code names",
+  "type": "module",
   "main": "codename-generator.js",
   "scripts": {
     "test": "node codename-generator.js 15"
@@ -9,10 +10,10 @@
   "private": false,
   "preferGlobal": true,
   "bin": {
-    "codename-generator": "./codename-generator.js"
+    "codename-generator": "codename-generator.js"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=20.0.0"
   },
   "repository": {
     "type": "git",

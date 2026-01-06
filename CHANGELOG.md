@@ -1,5 +1,22 @@
 # Change Log
 
+## [1.2.1] - January 6<sup>th</sup> 2026
+
+### Changed
+
+* Added input validation for numeric parameter (0 < n <= 1000)
+* Modernised JavaScript:
+  * Updated all var declarations to const/let
+  * Converted CommonJS to ES Modules
+* Fixed process.exit() usage
+* Updated ESLint ecmaVersion to 2022
+* Added optional chaining, nullish coalescing, and template literals
+* Replaced getRandomInt() with randomRange()
+* Improved error handling in catch blocks
+* Extract magic numbers to named constants
+* Updated package.json engines.node and check bin value
+* Updated Dependencies
+
 ## [1.2.0] - June 7<sup>th</sup> 2022
 
 ### Changed
