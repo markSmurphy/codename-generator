@@ -15,7 +15,7 @@ cuss-pack.txt
 *.cmd
 
 # Screenshots folder
-screenshots/*
+# screenshots/*
 
 # Logs
 logs
