@@ -1,5 +1,5 @@
 import debugModule from 'debug';
-import chalk from 'chalk';
+import chalk, { supportsColor } from 'chalk';
 
 const debug = debugModule('codename-generator');
 debug('Entry: [%s]', import.meta.url);
@@ -47,11 +47,7 @@ export function getColourLevelDesc() {
     const colourLevel = ['Colours Disabled', '16 Colours (Basic)', '256 Colours', '16 Million Colours (True Colour)'];
 
     // Use chalk to detect colour level support
-    let level = chalk.supportsColor.level;
+    let level = supportsColor?.level ?? 0;
 
-    if (level === null) {
-        level = 0;
-    }
-
-    return (colourLevel[level]);
+    return colourLevel[level];
 }

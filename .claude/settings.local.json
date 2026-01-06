@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node codename-generator.js:*)"
+      "Bash(node codename-generator.js:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm view:*)",
+      "Bash(node:*)",
+      "Bash(npm install)"
     ]
   }
 }
